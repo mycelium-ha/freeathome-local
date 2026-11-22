@@ -1,0 +1,50 @@
+[project]
+name = "freeathome-local"
+version = "1.0.0"
+description = "ABB-free@home and Busch-free@home (Busch-Jaeger) in Home Assistant, set up in the UI and running locally on the official SysAP API."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.14"
+dependencies = [
+    "aiohttp>=3.9.0",
+]
+
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+
+[tool.coverage.run]
+source = ["custom_components/freeathome_local"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true
+
+[tool.mypy]
+# Strict typing for the whole integration, HA layer included (Platinum: strict-typing).
+python_version = "3.14"
+files = ["custom_components/freeathome_local"]
+strict = true
+follow_imports = "silent"
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+# Home Assistant re-exports platform names (for example `ColorMode`) without `__all__`.
+module = ["homeassistant.*"]
+implicit_reexport = true
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

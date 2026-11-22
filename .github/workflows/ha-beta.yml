@@ -1,0 +1,21 @@
+name: Home Assistant beta
+
+# Early warning for upcoming Home Assistant releases, weekly and on demand: the test
+# suite on the newest pytest-homeassistant-custom-component pre-release, and the
+# import and mypy check against the newest Home Assistant pre-release itself.
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  beta:
+    uses: mycelium-ha/.github/.github/workflows/ha-beta.yml@main
+    with:
+      # Registry snapshots are pinned to the HA version in requirements_test.txt.
+      pytest_args: -k "not test_platform_snapshot"
+      run_ha_compat: true
+      run_mypy: true

@@ -1,0 +1,25 @@
+name: Feature request or new device
+description: Suggest an improvement or support for a free@home device or function.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: What would you like?
+      description: Describe the use case. For a device or function that is missing or shows up wrong, name the device type or article number from the free@home app.
+    validations:
+      required: true
+  - type: dropdown
+    id: brand
+    attributes:
+      label: Brand
+      options:
+        - Busch-free@home (Busch-Jaeger)
+        - ABB-free@home (ABB)
+        - Both
+        - Not device related
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: For a device request, attach the diagnostics download of the device (Settings → Devices & services → free@home Local → the device → ⋮ → Download diagnostics). It contains the function and pairing IDs we need; never attach raw dump_config output.

@@ -1,0 +1,71 @@
+name: Bug report
+description: Something does not work as described in the README.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please **never post credentials, host names, or the files written by `freeathome_local.dump_config` or `freeathome_local.monitor`**: they contain serial numbers and other data that identifies your home. The diagnostics download removes credentials, host, SysAP name, UUIDs and serial numbers and is safe to attach once you have checked the device and room names in it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead? Steps to reproduce help a lot.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: free@home Local version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.11.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: brand
+    attributes:
+      label: Brand
+      description: Device names differ between the two brands, so this helps to find the right device.
+      options:
+        - Busch-free@home (Busch-Jaeger)
+        - ABB-free@home (ABB)
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: sysap
+    attributes:
+      label: System Access Point firmware
+      description: free@home app → Settings → System Access Point (2.6.0 or newer is required).
+      placeholder: "3.4.0"
+    validations:
+      required: true
+  - type: input
+    id: devices
+    attributes:
+      label: Affected devices
+      description: Device type or article number as shown in the free@home app, for example "Dimmer actuator 4-gang" or "SDA-F-4.1.1-WL". Not the serial number.
+  - type: dropdown
+    id: legacy
+    attributes:
+      label: Is the freeathome integration (XMPP) also installed?
+      options:
+        - "No"
+        - "Yes"
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Settings → Devices & services → free@home Local → ⋮ → Download diagnostics (or from the affected device's page). Drag the file here.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log messages
+      description: Relevant lines from the Home Assistant log, ideally with debug logging enabled for the integration.
+      render: text

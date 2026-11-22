@@ -1,0 +1,448 @@
+{
+  "00000000-0000-0000-0000-000000000000": {
+    "sysapName": "Test SysAP",
+    "floorplan": {
+      "floors": {
+        "01": {
+          "name": "Ground Floor",
+          "rooms": {
+            "01": { "name": "Living Room" },
+            "02": { "name": "Kitchen" }
+          }
+        }
+      }
+    },
+    "devices": {
+      "ABB700D10001": {
+        "displayName": "Living Switch",
+        "deviceId": "100C",
+        "softwareVersion": "3.2.1",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Wall Rocker",
+            "functionID": "1010",
+            "nameId": "0045",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1, "value": "0" },
+              "odp0001": { "pairingID": 16, "value": "8" }
+            }
+          },
+          "ch0003": {
+            "displayName": "Ceiling Lamp",
+            "functionID": "0007",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" }
+            }
+          },
+          "ch0004": {
+            "displayName": "Unused Spare",
+            "functionID": "0007",
+            "floor": "",
+            "room": "",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "0" }
+            }
+          }
+        }
+      },
+      "ABB700D10002": {
+        "displayName": "Kitchen Lights",
+        "deviceId": "1010",
+        "interface": "TP",
+        "floor": "01",
+        "room": "02",
+        "channels": {
+          "ch0000": {
+            "displayName": "Kitchen Dimmer",
+            "functionID": "0012",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "1" },
+              "idp0001": { "pairingID": 17, "value": "60" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" },
+              "odp0001": { "pairingID": 272, "value": "60" }
+            }
+          },
+          "ch0001": {
+            "displayName": "Kitchen Tunable",
+            "functionID": "0040",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "1" },
+              "idp0001": { "pairingID": 17, "value": "80" },
+              "idp0002": { "pairingID": 22, "value": "50" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" },
+              "odp0001": { "pairingID": 272, "value": "80" },
+              "odp0002": { "pairingID": 280, "value": "50" }
+            },
+            "parameters": {
+              "par0001": { "parameterID": "00F5", "value": "6500" },
+              "par0002": { "parameterID": "00F6", "value": "2700" }
+            }
+          },
+          "ch0002": {
+            "displayName": "Kitchen RGB Strip",
+            "floor": "01",
+            "room": "01",
+            "functionID": "002F",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "1" },
+              "idp0001": { "pairingID": 17, "value": "100" },
+              "idp0002": { "pairingID": 21, "value": "255,128,0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" },
+              "odp0001": { "pairingID": 272, "value": "100" },
+              "odp0002": { "pairingID": 279, "value": "255,128,0" }
+            }
+          }
+        }
+      },
+      "ABB700D10003": {
+        "displayName": "Living Shutter",
+        "deviceId": "1013",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Main Shutter",
+            "functionID": "0009",
+            "inputs": {
+              "idp0000": { "pairingID": 32, "value": "0" },
+              "idp0001": { "pairingID": 33, "value": "0" },
+              "idp0002": { "pairingID": 35, "value": "25" },
+              "idp0003": { "pairingID": 36, "value": "50" },
+              "idp0004": { "pairingID": 40, "value": "1" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 288, "value": "0" },
+              "odp0001": { "pairingID": 289, "value": "25" },
+              "odp0002": { "pairingID": 290, "value": "50" },
+              "odp0003": { "pairingID": 257, "value": "0" }
+            }
+          }
+        }
+      },
+      "ABB700D10004": {
+        "displayName": "Living Thermostat",
+        "deviceId": "1004",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Room Thermostat",
+            "functionID": "000A",
+            "inputs": {
+              "idp0000": { "pairingID": 58, "value": "0" },
+              "idp0001": { "pairingID": 66, "value": "1" },
+              "idp0002": { "pairingID": 320, "value": "21.5" },
+              "idp0003": { "pairingID": 67, "value": "1" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 51, "value": "21.5" },
+              "odp0001": { "pairingID": 56, "value": "1" },
+              "odp0002": { "pairingID": 54, "value": "65" },
+              "odp0003": { "pairingID": 304, "value": "20.8" },
+              "odp0004": { "pairingID": 333, "value": "42" },
+              "odp0005": { "pairingID": 324, "value": "1" }
+            },
+            "parameters": {
+              "par0001": { "parameterID": "001B", "value": "-0.5" }
+            }
+          }
+        }
+      },
+      "ABB700D10005": {
+        "displayName": "Ceiling Fan",
+        "deviceId": "10A8",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Living Fan",
+            "functionID": "00A8",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "1" },
+              "idp0001": { "pairingID": 344, "value": "75" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" },
+              "odp0001": { "pairingID": 345, "value": "75" }
+            }
+          }
+        }
+      },
+      "ABB700D10006": {
+        "displayName": "Energy System",
+        "deviceId": "E001",
+        "interface": "vdev:ems",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "PV Inverter",
+            "functionID": "00C6",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1184, "value": "4250" },
+              "odp0001": { "pairingID": 1191, "value": "-1800" }
+            }
+          },
+          "ch0001": {
+            "displayName": "Home Battery",
+            "functionID": "00C7",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1188, "value": "1200" },
+              "odp0001": { "pairingID": 1189, "value": "88" }
+            }
+          }
+        }
+      },
+      "ABB700D10007": {
+        "displayName": "Air Quality",
+        "deviceId": "10BD",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Living Air",
+            "functionID": "00BD",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 337, "value": "48" },
+              "odp0001": { "pairingID": 1563, "value": "612" },
+              "odp0002": { "pairingID": 1570, "value": "120" }
+            }
+          }
+        }
+      },
+      "ABB700D10008": {
+        "displayName": "Window Contact",
+        "deviceId": "1064",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Terrace Door",
+            "functionID": "0064",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 53, "value": "1" },
+              "odp0001": { "pairingID": 41, "value": "33" }
+            }
+          }
+        }
+      },
+      "ABB700D10009": {
+        "displayName": "Weather Station",
+        "deviceId": "1040",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Outdoor Temp",
+            "functionID": "0043",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1024, "value": "14.2" }
+            }
+          },
+          "ch0001": {
+            "displayName": "Outdoor Wind",
+            "functionID": "0044",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1028, "value": "5.0" },
+              "odp0001": { "pairingID": 1025, "value": "3" }
+            }
+          }
+        }
+      },
+      "ABB700D10010": {
+        "displayName": "Entrance Access",
+        "deviceId": "101A",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Door Opener",
+            "functionID": "001A",
+            "inputs": {
+              "idp0000": { "pairingID": 2, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "0" }
+            }
+          },
+          "ch0001": {
+            "displayName": "Doorbell",
+            "functionID": "001F",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 1, "value": "1" }
+            }
+          },
+          "ch0002": {
+            "displayName": "Pulse Trigger",
+            "functionID": "0045",
+            "inputs": {
+              "idp0000": { "pairingID": 2, "value": "0" }
+            },
+            "outputs": {}
+          }
+        }
+      },
+      "FFFF48000001": {
+        "displayName": "Movie Night",
+        "deviceId": "4800",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Movie Night",
+            "functionID": "4800",
+            "inputs": {},
+            "outputs": {
+              "odp0000": { "pairingID": 4, "value": "0" }
+            }
+          }
+        }
+      },
+      "FFFF40000001": {
+        "displayName": "All Lights",
+        "deviceId": "4000",
+        "interface": "TP",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "All Lights",
+            "functionID": "4000",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 261, "value": "0" }
+            }
+          }
+        }
+      },
+      "FFFF4A000001": {
+        "displayName": "Morning Schedule",
+        "deviceId": "4A00",
+        "interface": "TP",
+        "channels": {
+          "ch0000": {
+            "displayName": "Morning Schedule",
+            "functionID": "4A00",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "1" }
+            }
+          }
+        }
+      },
+      "FFFF4A000002": {
+        "displayName": "SummerMorningClose",
+        "deviceId": "4A00",
+        "channels": {
+          "ch0000": {
+            "displayName": "SummerMorningClose",
+            "functionID": "4A00",
+            "inputs": {
+              "idp0000": { "pairingID": 61697, "value": "" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 61698, "value": "1" }
+            }
+          }
+        }
+      },
+      "FFFF40010001": {
+        "displayName": "Central Shutters",
+        "deviceId": "4001",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Central Shutters",
+            "functionID": "4001",
+            "inputs": {
+              "idp0000": { "pairingID": 288, "value": "1" },
+              "idp0001": { "pairingID": 289, "value": "50" },
+              "idp0004": { "pairingID": 257, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 293, "value": "1" },
+              "odp0001": { "pairingID": 294, "value": "50" },
+              "odp0003": { "pairingID": 32, "value": "" },
+              "odp0004": { "pairingID": 33, "value": "" },
+              "odp0005": { "pairingID": 35, "value": "0" },
+              "odp0008": { "pairingID": 262, "value": "0" },
+              "odp0009": { "pairingID": 40, "value": "" }
+            }
+          }
+        }
+      },
+      "6000A1B2C3D4": {
+        "displayName": "Virtual Garage",
+        "deviceId": "vdev",
+        "interface": "vdev:ha",
+        "channels": {
+          "ch0000": {
+            "displayName": "Garage Relay",
+            "functionID": "0007",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "0" }
+            }
+          }
+        }
+      },
+      "HUE00000001": {
+        "displayName": "Ignored Hue Lamp",
+        "deviceId": "hue",
+        "interface": "hue",
+        "floor": "01",
+        "room": "01",
+        "channels": {
+          "ch0000": {
+            "displayName": "Hue Bulb",
+            "functionID": "0007",
+            "inputs": {
+              "idp0000": { "pairingID": 1, "value": "0" }
+            },
+            "outputs": {
+              "odp0000": { "pairingID": 256, "value": "0" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

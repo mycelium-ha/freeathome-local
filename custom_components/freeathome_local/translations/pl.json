@@ -1,0 +1,447 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz z free@home SysAP (Lokalne API)",
+        "description": "Podaj adres IP/nazwę hosta SysAP oraz dane logowania Lokalnego API (Ustawienia free@home -> Lokalne API, firmware >= 2.6.0).",
+        "data": {
+          "host": "Host / Adres IP",
+          "username": "Nazwa użytkownika Lokalnego API",
+          "password": "Hasło",
+          "switch_as_x": "Udostępniaj aktory przełączające jako przełączniki (zamiast świateł)",
+          "name_prefix": "Opcjonalny prefiks nazwy",
+          "use_https": "Użyj HTTPS / WSS",
+          "verify_ssl": "Weryfikuj certyfikat SSL",
+          "include_orphan_channels": "Uwzględnij kanały nieprzypisane do pokoju"
+        },
+        "data_description": {
+          "host": "Adres IP lub nazwa hosta System Access Point, opcjonalnie z portem.",
+          "username": "Użytkownik lokalnego API, widoczny w aplikacji free@home w Ustawienia > Lokalne API.",
+          "password": "Hasło użytkownika lokalnego API.",
+          "switch_as_x": "Pokazuje aktory przełączające jako przełączniki. Wyłącz, aby pokazać je jako światła.",
+          "name_prefix": "Tekst przed nazwą każdej encji, na przykład \"Local \", aby odróżnić encje od encji innej integracji dla tego samego systemu.",
+          "use_https": "Łączy przez HTTPS i WSS zamiast HTTP i WS.",
+          "verify_ssl": "Sprawdza certyfikat SysAP. Wyłącz dla certyfikatu z podpisem własnym, którego używa większość SysAP.",
+          "include_orphan_channels": "Tworzy też encje dla kanałów bez pomieszczenia w free@home."
+        }
+      },
+      "link": {
+        "title": "Wykryto free@home SysAP ({name})",
+        "description": "Połącz free@home Local z wykrytym SysAP pod adresem {host} przez Lokalne API.",
+        "data": {
+          "username": "Nazwa użytkownika Lokalnego API",
+          "password": "Hasło",
+          "switch_as_x": "Udostępniaj aktory przełączające jako przełączniki (zamiast świateł)",
+          "name_prefix": "Opcjonalny prefiks nazwy",
+          "use_https": "Użyj HTTPS / WSS",
+          "verify_ssl": "Weryfikuj certyfikat SSL",
+          "include_orphan_channels": "Uwzględnij kanały nieprzypisane do pokoju"
+        },
+        "data_description": {
+          "username": "Użytkownik lokalnego API, widoczny w aplikacji free@home w Ustawienia > Lokalne API.",
+          "password": "Hasło użytkownika lokalnego API.",
+          "switch_as_x": "Pokazuje aktory przełączające jako przełączniki. Wyłącz, aby pokazać je jako światła.",
+          "name_prefix": "Tekst przed nazwą każdej encji, na przykład \"Local \", aby odróżnić encje od encji innej integracji dla tego samego systemu.",
+          "use_https": "Łączy przez HTTPS i WSS zamiast HTTP i WS.",
+          "verify_ssl": "Sprawdza certyfikat SysAP. Wyłącz dla certyfikatu z podpisem własnym, którego używa większość SysAP.",
+          "include_orphan_channels": "Tworzy też encje dla kanałów bez pomieszczenia w free@home."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponowne uwierzytelnianie",
+        "description": "SysAP free@home pod adresem {host} odrzucił zapisane dane Lokalnego API.",
+        "data": {
+          "username": "Nazwa użytkownika Lokalnego API",
+          "password": "Hasło"
+        },
+        "data_description": {
+          "username": "Użytkownik lokalnego API, widoczny w aplikacji free@home w Ustawienia > Lokalne API.",
+          "password": "Hasło użytkownika lokalnego API."
+        }
+      },
+      "reconfigure": {
+        "description": "Zaktualizuj ustawienia połączenia i nazewnictwa dla free@home Local.",
+        "data": {
+          "host": "Host / Adres IP",
+          "switch_as_x": "Udostępniaj aktory przełączające jako przełączniki (zamiast świateł)",
+          "name_prefix": "Opcjonalny prefiks nazwy",
+          "use_https": "Użyj HTTPS / WSS",
+          "verify_ssl": "Weryfikuj certyfikat SSL",
+          "include_orphan_channels": "Uwzględnij kanały nieprzypisane do pokoju"
+        },
+        "data_description": {
+          "host": "Adres IP lub nazwa hosta System Access Point, opcjonalnie z portem.",
+          "switch_as_x": "Pokazuje aktory przełączające jako przełączniki. Wyłącz, aby pokazać je jako światła.",
+          "name_prefix": "Tekst przed nazwą każdej encji, na przykład \"Local \", aby odróżnić encje od encji innej integracji dla tego samego systemu.",
+          "use_https": "Łączy przez HTTPS i WSS zamiast HTTP i WS.",
+          "verify_ssl": "Sprawdza certyfikat SysAP. Wyłącz dla certyfikatu z podpisem własnym, którego używa większość SysAP.",
+          "include_orphan_channels": "Tworzy też encje dla kanałów bez pomieszczenia w free@home."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie udało się połączyć",
+      "invalid_auth": "Nieprawidłowe dane logowania",
+      "unknown": "Nieoczekiwany błąd",
+      "other_sysap": "Ten host należy do innego urządzenia SysAP niż skonfigurowane."
+    },
+    "abort": {
+      "already_configured": "Urządzenie jest już skonfigurowane",
+      "not_ipv4address": "Wykryty adres nie jest adresem IPv4.",
+      "not_sysap": "Wykryty host nie odpowiedział jako free@home SysAP.",
+      "serialNumber_not_found": "Nie znaleziono numeru seryjnego SysAP.",
+      "reauth_successful": "Ponowne uwierzytelnianie powiodło się",
+      "reconfigure_successful": "Ponowna konfiguracja powiodła się"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje free@home Local",
+        "data": {
+          "switch_as_x": "Udostępniaj aktory przełączające jako przełączniki (zamiast świateł)",
+          "name_prefix": "Opcjonalny prefiks nazwy",
+          "use_https": "Użyj HTTPS / WSS",
+          "verify_ssl": "Weryfikuj certyfikat SSL",
+          "include_orphan_channels": "Uwzględnij kanały nieprzypisane do pokoju"
+        },
+        "data_description": {
+          "switch_as_x": "Pokazuje aktory przełączające jako przełączniki. Wyłącz, aby pokazać je jako światła.",
+          "name_prefix": "Tekst przed nazwą każdej encji, na przykład \"Local \", aby odróżnić encje od encji innej integracji dla tego samego systemu.",
+          "use_https": "Łączy przez HTTPS i WSS zamiast HTTP i WS.",
+          "verify_ssl": "Sprawdza certyfikat SysAP. Wyłącz dla certyfikatu z podpisem własnym, którego używa większość SysAP.",
+          "include_orphan_channels": "Tworzy też encje dla kanałów bez pomieszczenia w free@home."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "door_call": {
+        "name": "Dzwonek do drzwi"
+      }
+    },
+    "event": {
+      "control": {
+        "name": "Przycisk",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "press_up": "Górna strona naciśnięta",
+              "press_down": "Dolna strona naciśnięta",
+              "hold_up": "Górna strona przytrzymana",
+              "hold_down": "Dolna strona przytrzymana",
+              "release": "Zwolniony"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "temperature_correction": {
+        "name": "Korekta temperatury"
+      }
+    },
+    "select": {
+      "forced_position": {
+        "name": "Pozycja wymuszona",
+        "state": {
+          "none": "Brak",
+          "open": "Utrzymywane otwarte",
+          "closed": "Utrzymywane zamknięte"
+        }
+      }
+    },
+    "sensor": {
+      "dimming_status": {
+        "name": "Status ściemniacza",
+        "state": {
+          "not_pressed": "Nienaciśnięty",
+          "pressed_up": "Naciśnięty u góry",
+          "pressed_down": "Naciśnięty u dołu",
+          "held_up": "Przytrzymany u góry",
+          "held_down": "Przytrzymany u dołu"
+        }
+      },
+      "temperature": {
+        "name": "Temperatura"
+      },
+      "thermostat_temperature": {
+        "name": "Temperatura"
+      },
+      "windstrength": {
+        "name": "Prędkość wiatru"
+      },
+      "windforce": {
+        "name": "Siła wiatru"
+      },
+      "rain": {
+        "name": "Deszcz"
+      },
+      "lux": {
+        "name": "Natężenie światła"
+      },
+      "valve_volume_flow": {
+        "name": "Otwarcie zaworu"
+      },
+      "humidity": {
+        "name": "Wilgotność"
+      },
+      "co2": {
+        "name": "CO2"
+      },
+      "voc": {
+        "name": "LZO"
+      },
+      "pv_power": {
+        "name": "Moc PV"
+      },
+      "battery_power": {
+        "name": "Moc baterii"
+      },
+      "battery_soc": {
+        "name": "Poziom baterii"
+      },
+      "grid_power": {
+        "name": "Moc sieci"
+      },
+      "home_power": {
+        "name": "Zużycie domu"
+      },
+      "consumed_energy": {
+        "name": "Pobrana energia"
+      },
+      "injected_energy": {
+        "name": "Oddana energia"
+      },
+      "self_consumption": {
+        "name": "Autokonsumpcja"
+      },
+      "self_sufficiency": {
+        "name": "Samowystarczalność"
+      },
+      "valve": {
+        "name": "Zawór"
+      },
+      "window_position": {
+        "name": "Położenie okna",
+        "state": {
+          "closed": "Zamknięte",
+          "tilted": "Uchylone",
+          "open": "Otwarte"
+        }
+      }
+    }
+  },
+  "services": {
+    "dump_config": {
+      "name": "Eksportuj konfigurację",
+      "description": "Eksportuje pełną konfigurację JSON Lokalnego API do folderu konfiguracji Home Assistant.",
+      "fields": {
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "monitor": {
+      "name": "Monitoruj ramki WebSocket",
+      "description": "Zapisuje surowe ramki JSON WebSocket z Lokalnego API do pliku JSONL.",
+      "fields": {
+        "duration": {
+          "name": "Czas trwania",
+          "description": "Czas nasłuchu w sekundach (1-300)."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "set_datapoint": {
+      "name": "Ustaw punkt danych",
+      "description": "Zapisuje wartość do Lokalnego REST API SysAP.",
+      "fields": {
+        "serialnumber": {
+          "name": "Numer seryjny",
+          "description": "Numer seryjny urządzenia (np. 6000A1B2C3D4)."
+        },
+        "channel_id": {
+          "name": "ID kanału",
+          "description": "Identyfikator kanału (np. ch0000)."
+        },
+        "datapoint_id": {
+          "name": "ID punktu danych",
+          "description": "Punkt wejściowy lub wyjściowy (np. idp0000 lub odp0000)."
+        },
+        "value": {
+          "name": "Wartość",
+          "description": "Wartość tekstowa do zapisania."
+        },
+        "sysap_uuid": {
+          "name": "UUID SysAP",
+          "description": "Opcjonalny UUID SysAP."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "register_virtual_device": {
+      "name": "Zarejestruj urządzenie wirtualne",
+      "description": "Rejestruje lub odświeża urządzenie wirtualne/proxy na SysAP z odnawianiem TTL.",
+      "fields": {
+        "native_id": {
+          "name": "Natywne ID",
+          "description": "Unikalny identyfikator urządzenia wirtualnego."
+        },
+        "device_type": {
+          "name": "Typ urządzenia",
+          "description": "Oficjalny typ urządzenia wirtualnego free@home."
+        },
+        "display_name": {
+          "name": "Nazwa wyświetlana",
+          "description": "Nazwa widoczna w free@home."
+        },
+        "ttl": {
+          "name": "TTL (sekundy)",
+          "description": "Czas życia w sekundach (0 = nieaktywne, -1 = stałe, >0 = keep-alive)."
+        },
+        "flavor": {
+          "name": "Wariant",
+          "description": "Opcjonalny wariant (np. dla EnergyMeterv2)."
+        },
+        "capabilities": {
+          "name": "Możliwości",
+          "description": "Opcjonalna lista funkcji."
+        },
+        "sysap_uuid": {
+          "name": "UUID SysAP",
+          "description": "Opcjonalny UUID SysAP."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "unregister_virtual_device": {
+      "name": "Wyrejestruj urządzenie wirtualne",
+      "description": "Zatrzymuje odświeżanie TTL i oznacza urządzenie wirtualne jako nieaktywne (ttl=0).",
+      "fields": {
+        "native_id": {
+          "name": "Natywne ID",
+          "description": "Unikalny identyfikator urządzenia wirtualnego."
+        },
+        "sysap_uuid": {
+          "name": "UUID SysAP",
+          "description": "Opcjonalny UUID SysAP."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "trigger_proxy_device": {
+      "name": "Wyzwól akcję urządzenia proxy",
+      "description": "Wyzwala akcję (shortpress, longpress, release) na urządzeniu proxy.",
+      "fields": {
+        "device_class": {
+          "name": "Klasa urządzenia",
+          "description": "Klasa proxy (np. pushbutton)."
+        },
+        "device_id": {
+          "name": "ID urządzenia",
+          "description": "Identyfikator urządzenia proxy."
+        },
+        "action": {
+          "name": "Akcja",
+          "description": "Akcja do wyzwolenia (shortpress, longpress, release)."
+        },
+        "sysap_uuid": {
+          "name": "UUID SysAP",
+          "description": "Opcjonalny UUID SysAP."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "send_notification": {
+      "name": "Wyślij powiadomienie SysAP",
+      "description": "Wysyła powiadomienie systemowe do free@home SysAP.",
+      "fields": {
+        "subject": {
+          "name": "Temat",
+          "description": "Nagłówek powiadomienia."
+        },
+        "body": {
+          "name": "Treść",
+          "description": "Treść wiadomości."
+        },
+        "timeout_minutes": {
+          "name": "Limit czasu (minuty)",
+          "description": "Opcjonalny czas automatycznego zamknięcia w minutach."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    },
+    "migrate_from_legacy": {
+      "name": "Przejmij z freeathome",
+      "description": "Podgląd lub przejęcie nazw urządzeń, obszarów, ustawień encji, ustawień asystentów głosowych i historii z integracji freeathome.",
+      "fields": {
+        "dry_run": {
+          "name": "Tylko podgląd (dry run)",
+          "description": "Sprawdź dokładny plan migracji bez modyfikowania wpisów, urządzeń ani encji."
+        },
+        "cutover": {
+          "name": "Przejęcie (usuń wpis freeathome, zachowaj entity_id i historię)",
+          "description": "Wyłączone: kopiowane są tylko ustawienia, a obie integracje działają dalej. Włączone (z wyłączonym dry_run): wpis freeathome zostaje usunięty, a encje free@home Local przejmują jego entity_id i historię."
+        },
+        "serialnumbers": {
+          "name": "Filtr numerów seryjnych (opcjonalnie)",
+          "description": "Opcjonalne numery seryjne oddzielone przecinkami lub nowymi liniami do selektywnego podglądu lub synchronizacji metadanych."
+        },
+        "config_entry_id": {
+          "name": "SysAP",
+          "description": "SysAP free@home Local, którego użyć. Wymagany, gdy skonfigurowano kilka SysAP, a akcja coś w nim zapisuje."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "no_loaded_entries": {
+      "message": "Żaden SysAP free@home Local nie jest załadowany."
+    },
+    "entry_not_loaded": {
+      "message": "Wpis konfiguracji free@home Local {entry_id} nie jest załadowany."
+    },
+    "multiple_entries_loaded": {
+      "message": "Załadowano kilka SysAP. Wybierz wpis konfiguracji, którego chcesz użyć."
+    },
+    "auth_failed": {
+      "message": "SysAP pod adresem {host} odrzucił dane logowania."
+    },
+    "cannot_connect": {
+      "message": "Nie można połączyć się z SysAP pod adresem {host}: {error}"
+    },
+    "action_failed": {
+      "message": "SysAP nie przyjął polecenia dla {entity_id}: {error}"
+    },
+    "partial_cutover_not_supported": {
+      "message": "Przejęcia nie można ograniczyć do numerów seryjnych, ponieważ integracja freeathome używa jednego wpisu konfiguracji dla całego SysAP. Użyj cutover: false do selektywnej synchronizacji albo usuń numery seryjne, aby wykonać pełne przejęcie."
+    },
+    "legacy_entry_ambiguous": {
+      "message": "Istnieje kilka wpisów konfiguracji freeathome i żaden nie pasuje do tego SysAP pod względem numeru seryjnego ani hosta."
+    },
+    "request_failed": {
+      "message": "SysAP pod adresem {host} nie przyjął żądania: {error}"
+    }
+  }
+}

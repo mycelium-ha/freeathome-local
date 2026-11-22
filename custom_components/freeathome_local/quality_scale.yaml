@@ -1,0 +1,109 @@
+rules:
+  # Bronze
+  action-setup: done
+  appropriate-polling:
+    status: exempt
+    comment: local_push integration; all state arrives via the SysAP WebSocket.
+  brands: done
+  common-modules: done
+  config-flow-test-coverage: done
+  config-flow: done
+  dependency-transparency: done
+  docs-actions: done
+  docs-conditions:
+    status: exempt
+    comment: The integration provides no conditions of its own; automations use entity states.
+  docs-triggers:
+    status: exempt
+    comment: >-
+      The integration provides no trigger platform of its own. Event entities and the
+      freeathome_local_* bus events used as triggers are documented in the README.
+  docs-high-level-description: done
+  docs-installation-instructions: done
+  docs-removal-instructions:
+    status: done
+    comment: README "Removal", including virtual devices.
+  entity-event-setup: done
+  entity-unique-id: done
+  has-entity-name: done
+  runtime-data: done
+  test-before-configure: done
+  test-before-setup: done
+  unique-config-entry: done
+
+  # Silver
+  action-exceptions: done
+  config-entry-unloading: done
+  docs-configuration-parameters:
+    status: done
+    comment: README "Configuration → Options" lists every option with its default.
+  docs-installation-parameters:
+    status: done
+    comment: README "Configuration → Setup fields".
+  entity-unavailable:
+    status: done
+    comment: Entities follow the WebSocket connection and the SysAP's per-device unresponsive flag.
+  integration-owner: done
+  log-when-unavailable:
+    status: done
+    comment: One warning and one info per lost/recovered connection and per unresponsive device.
+  parallel-updates: done
+  reauthentication-flow: done
+  test-coverage:
+    status: done
+    comment: >-
+      Line and branch coverage above 95 % against real HA in every module, enforced in CI by
+      `fail_under` (total) and scripts/check_coverage.py (per module).
+
+  # Gold
+  devices: done
+  diagnostics: done
+  discovery-update-info: done
+  discovery: done
+  docs-data-update:
+    status: done
+    comment: README "How data is updated" (local push, reconnect and resync).
+  docs-examples: done
+  docs-known-limitations:
+    status: done
+    comment: README "Known limitations".
+  docs-supported-devices: done
+  docs-supported-functions: done
+  docs-troubleshooting:
+    status: done
+    comment: README "Troubleshooting" (symptoms, diagnostics, debug logging, raw data).
+  docs-use-cases:
+    status: done
+    comment: README "Use cases".
+  dynamic-devices: done
+  entity-category:
+    status: done
+    comment: Timer program switches are config entities; no other entity is configuration or diagnostics.
+  entity-device-class: done
+  entity-disabled-by-default:
+    status: done
+    comment: The Beaufort wind force (duplicate of wind speed) starts disabled.
+  entity-translations: done
+  exception-translations: done
+  icon-translations: done
+  reconfiguration-flow: done
+  repair-issues:
+    status: exempt
+    comment: >-
+      No problem needs a repair issue: credentials go through reauthentication, connection
+      problems through setup retry with a translated error, and unreachable devices make their
+      entities unavailable (ADR-005). Deprecations will raise repair issues (standards §5a).
+  stale-devices:
+    status: done
+    comment: >-
+      devicesRemoved frames remove the device with its channel devices and entities; on setup,
+      devices and channels missing from the SysAP configuration are removed.
+
+  # Platinum
+  async-dependency: done
+  inject-websession: done
+  strict-typing:
+    status: done
+    comment: >-
+      mypy --strict passes for the whole integration and runs in CI against the HA test pin
+      and the newest stable HA.

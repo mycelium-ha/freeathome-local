@@ -1,0 +1,104 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "door_call": {
+        "default": "mdi:doorbell"
+      }
+    },
+    "event": {
+      "control": {
+        "default": "mdi:gesture-tap-button"
+      }
+    },
+    "number": {
+      "temperature_correction": {
+        "default": "mdi:thermometer-plus"
+      }
+    },
+    "select": {
+      "forced_position": {
+        "default": "mdi:lock-outline",
+        "state": {
+          "none": "mdi:lock-open-variant-outline"
+        }
+      }
+    },
+    "sensor": {
+      "dimming_status": {
+        "default": "mdi:gesture-tap-button",
+        "state": {
+          "pressed_up": "mdi:chevron-up",
+          "pressed_down": "mdi:chevron-down",
+          "held_up": "mdi:chevron-double-up",
+          "held_down": "mdi:chevron-double-down"
+        }
+      },
+      "windforce": {
+        "default": "mdi:weather-windy-variant"
+      },
+      "rain": {
+        "default": "mdi:weather-rainy"
+      },
+      "valve_volume_flow": {
+        "default": "mdi:valve"
+      },
+      "pv_power": {
+        "default": "mdi:solar-power"
+      },
+      "battery_power": {
+        "default": "mdi:battery-charging"
+      },
+      "grid_power": {
+        "default": "mdi:transmission-tower"
+      },
+      "home_power": {
+        "default": "mdi:home-lightning-bolt"
+      },
+      "injected_energy": {
+        "default": "mdi:transmission-tower-export"
+      },
+      "self_consumption": {
+        "default": "mdi:home-percent"
+      },
+      "self_sufficiency": {
+        "default": "mdi:home-percent"
+      },
+      "valve": {
+        "default": "mdi:valve"
+      },
+      "window_position": {
+        "default": "mdi:window-closed-variant",
+        "state": {
+          "tilted": "mdi:window-open-variant",
+          "open": "mdi:window-open"
+        }
+      }
+    }
+  },
+  "services": {
+    "dump_config": {
+      "service": "mdi:file-download"
+    },
+    "monitor": {
+      "service": "mdi:record-rec"
+    },
+    "set_datapoint": {
+      "service": "mdi:pencil"
+    },
+    "register_virtual_device": {
+      "service": "mdi:plus-box"
+    },
+    "unregister_virtual_device": {
+      "service": "mdi:minus-box"
+    },
+    "trigger_proxy_device": {
+      "service": "mdi:gesture-tap"
+    },
+    "send_notification": {
+      "service": "mdi:message-text"
+    },
+    "migrate_from_legacy": {
+      "service": "mdi:database-import"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Test dependencies for the minimum supported Home Assistant (ADR-004: 2026.9.0).
+# pytest-homeassistant-custom-component 0.13.363 pins homeassistant==2026.9.0.
+# Keep this in sync with `homeassistant` in hacs.json when the minimum changes.
+pytest-homeassistant-custom-component==0.13.363
+pytest-cov==7.1.0
